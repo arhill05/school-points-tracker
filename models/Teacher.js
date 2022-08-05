@@ -1,5 +1,4 @@
 import mongoose, { ObjectId } from "mongoose";
-import { ClassSchema } from "./Class";
 
 const TeacherSchema = new mongoose.Schema({
   first_name: {
@@ -14,7 +13,7 @@ const TeacherSchema = new mongoose.Schema({
     type: String,
     required: [true, "Please provide the last name for the teacher"],
   },
-  classes: [{ type: ObjectId, ref: "Class" }],
+  classes: [{ type: mongoose.Types.ObjectId, ref: "Class" }],
 });
 
 export default mongoose.models.Teacher ||
